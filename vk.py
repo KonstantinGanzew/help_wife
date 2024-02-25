@@ -1,15 +1,12 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
-
-CHROME_EXE_URL = r'C:\Program Files\Google\Chrome\Application\chrome.exe'
-PROFILE = r'C:\Users\kureed\AppData\Local\Google\Chrome\User Data'
+from auth_data import PROFILE, CHROME_EXE_URL
 
 def vk_post():
     # options
     options = webdriver.ChromeOptions()
-    options.add_argument('user-data-dir=' + PROFILE)
+    options.add_argument(PROFILE)
     options.binary_location = CHROME_EXE_URL
 
     url = 'https://vk.com/feed?c%5Ballow_dups%5D=1&c%5Bq%5D=%F3%F4%E0%ED%E5%F2&section=search'

@@ -2,14 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import time
-
-CHROME_EXE_URL = r'C:\Program Files\Google\Chrome\Application\chrome.exe'
-PROFILE = r'C:\Users\kureed\AppData\Local\Google\Chrome\User Data'
+from auth_data import PROFILE, CHROME_EXE_URL
 
 def tg_post():
     # options
     options = webdriver.ChromeOptions()
-    options.add_argument('user-data-dir=' + PROFILE)
+    options.add_argument(PROFILE)
     options.binary_location = CHROME_EXE_URL
 
     url = 'https://tgstat.ru/search'
