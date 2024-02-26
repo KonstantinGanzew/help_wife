@@ -7,6 +7,7 @@ def vk_post():
     # options
     options = webdriver.ChromeOptions()
     options.add_argument(PROFILE)
+    options.add_argument("--headless")
     options.binary_location = CHROME_EXE_URL
 
     url = 'https://vk.com/feed?c%5Ballow_dups%5D=1&c%5Bq%5D=%F3%F4%E0%ED%E5%F2&section=search'
@@ -32,12 +33,12 @@ def vk_post():
             a = [t.text, p]
             posts.append(a)
         time.sleep(2)
-        
-        
+
+
     except Exception as ex:
         print(ex)
     finally:
         driver.close()
         driver.quit()
-    
+
     return posts
