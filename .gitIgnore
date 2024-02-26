@@ -1,3 +1,4 @@
 __pycache__
 auth_data.py
 posts.db
+logs.log
